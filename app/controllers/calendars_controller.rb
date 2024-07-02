@@ -8,13 +8,13 @@ class CalendarsController < ApplicationController
 
   # 予定の保存
   def create
-    Plan.create(plan_params)
+    Plan.create(params)
     redirect_to action: :index
   end
 
   private
 
-  def plan_params
+  def params
     params.require(:calendars).permit(:date, :plan)
   end
 
